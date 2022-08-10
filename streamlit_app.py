@@ -15,6 +15,11 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
+@st.cache
+def load_data() -> pd.DataFrame:
+    # Load data
+    df = pd.read_csv(r"https://raw.githubusercontent.com/Jacobian04/data/main/BTC-USD(Sep%2017%2C%202014%20-%20Jun%2011%2C%202022).csv")
+    return df
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
